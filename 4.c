@@ -1,18 +1,42 @@
 #include<stdio.h>
+#include<stdlib.h>
+int summation(int arr[],int length)
+{
+  int icnt=0;
+ int sum=0;
+for(icnt=0;icnt<length;icnt++)
+{
+ printf("%d",&arr[icnt]);
+sum=sum+arr[icnt];
+
+}
+return sum;
+}
+
 int main()
 {
-struct demo
-{
-  int arr[3];
-  float brr[2];
-};
- struct demo obj;
- obj.arr[0]=11;
- obj.arr[1]=33;
- obj.arr[2]=44;
- obj.brr[0]=12.44;
- obj.brr[1]=10.11;
 
-printf("%d\n%d\n%d\n%f\n%f\n", obj.arr[0], obj.arr[1],obj.arr[2],obj.brr[0],obj.brr[1]c );
-return 0;
+int size=0;
+int ret=0;
+int icnt=0;
+
+printf("enter number of elemens\n");
+scanf("%d",&size);
+
+int *ptr=NULL;
+ptr=(int*)malloc(sizeof(int)*size);
+
+printf("enter the element of array\n");
+
+for(icnt=0;icnt<size;icnt++)
+{
+ scanf("%d",&ptr[icnt]);
+}
+
+ret=summation(ptr,size);
+printf("addtion is :%d\n",ret);
+
+free(ptr);
+
+ return 0;
 }
